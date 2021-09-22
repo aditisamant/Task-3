@@ -1,0 +1,12 @@
+#install rsa library in the command prompt
+pip install rsa
+
+#write the code in IDLE (Python 3.9 64-bit)
+import rsa
+publicKey, privateKey = rsa.newkeys(512)
+message = "hii, this is aditi here"
+encMessage = rsa.encrypt(message.encode(), publicKey)
+print("original string: ", message)
+print("encrypted string: ", encMessage)
+decMessage = rsa.decrypt(encMessage, privateKey).decode()
+print("decrypted string: ", decMessage)
