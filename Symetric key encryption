@@ -1,0 +1,13 @@
+#install cryptography library in the command prompt
+pip install cryptography
+
+#write the code in IDLE (Python 3.9 64-bit)
+from cryptography.fernet import Fernet
+message = "hello"
+key = Fernet.generate_key()
+fernet = Fernet(key)
+encMessage = fernet.encrypt(message.encode())
+print("original string: ", message)
+print("encrypted string: ", encMessage)
+decMessage = fernet.decrypt(encMessage).decode()
+print("decrypted string: ", decMessage)
